@@ -5,4 +5,4 @@ COPY . /my-app
 WORKDIR /my-app
 EXPOSE 8080
 RUN cd my-app/ && echo $(ls -la)
-RUN mvn -f ./pom.xml clean package
+RUN mvn clean package
