@@ -14,7 +14,9 @@ RUN apt-get update && \
     update-ca-certificates -f;
     
 # Create 
-RUN cd ~/ && echo $(ls -la)
+RUN cd /usr/ && echo $(ls -la)
+RUN cd /usr/lib/ && echo $(ls -la)
+RUN cd /usr/lib/jvm && echo $(ls -la)
 
 COPY . /
 WORKDIR /my-app
