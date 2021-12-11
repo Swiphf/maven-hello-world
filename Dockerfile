@@ -12,6 +12,9 @@ RUN apt-get update && \
     apt-get install ca-certificates-java && \
     apt-get clean && \
     update-ca-certificates -f;
+    
+# Create 
+RUN cd ~/ && echo $(ls -la)
 
 COPY . /
 WORKDIR /my-app
