@@ -12,11 +12,9 @@ RUN apt-get update && \
     apt-get install ca-certificates-java && \
     apt-get clean && \
     update-ca-certificates -f;
-    
-# Create 
-RUN cd /usr/ && echo $(ls -la)
-RUN cd /usr/lib/ && echo $(ls -la)
-RUN cd /usr/lib/jvm && echo $(ls -la)
+
+# Create environment variable
+ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 COPY . /
 WORKDIR /my-app
