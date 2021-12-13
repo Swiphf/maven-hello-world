@@ -1,14 +1,10 @@
 pipeline {
+    agent any
     environment {
         registry = "idoalon/maven_exercise" 
         registryCredential = 'dockerhub_id' 
         dockerImage = ''
-    }
-    agent any
-    tools {
-        maven 'Maven 3.6.0' 
-        jdk 'jdk8' 
-    }
+    }   
     stages {
         stage('Get Source Code') {
             steps {
