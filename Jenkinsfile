@@ -31,6 +31,13 @@ pipeline {
             steps { 
                 sh "docker rmi $registry:$BUILD_NUMBER" 
             }
+        }
+        stage('Push to Kubernetes Cluster') { 
+            steps { 
+                script {
+                    kubernetesDeploy(configs: "deployment.yml", kubeconfigId: "kubernetes")
+                }
+            }
         } 
     }
 }
