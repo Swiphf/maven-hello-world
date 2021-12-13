@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: mavenexercise
-          image: idoalon/maven_exercise:latest
+          image: idoalon/maven_exercise:47
           ports:
           - containerPort: 8080
