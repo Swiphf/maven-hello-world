@@ -15,6 +15,5 @@ spec:
       containers:
         - name: mavenexercise
           image: idoalon/maven_exercise:latest
-          imagePullPolicy: Never
           ports:
           - containerPort: 8080
