@@ -11,14 +11,14 @@ pipeline {
                 git 'https://github.com/Swiphf/maven-hello-world.git'
             }
         }
-        stage('Build Image') { 
+        stage('Build Docker Image') { 
             steps { 
                 script { 
                     dockerImage = docker.build registry + ":$BUILD_NUMBER" 
                 }
             } 
         }
-         stage('Deploy our image') { 
+         stage('Deploy to  Dockerhub') { 
             steps { 
                 script { 
                     docker.withRegistry( '', registryCredential ) { 
