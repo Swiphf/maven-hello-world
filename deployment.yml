@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: mavenexercise
-          image: idoalon/maven-exercise
+          image: ors09/goapp
           ports:
           - containerPort: 8080
 
