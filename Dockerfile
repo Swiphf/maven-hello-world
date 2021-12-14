@@ -8,4 +8,5 @@ ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 COPY . /
 WORKDIR /my-app
 EXPOSE 8080
-ENTRYPOINT mvn clean package & java -jar target/myapp-1.0.jar --server.port=5555
+ENTRYPOINT java -jar target/myapp-1.0.jar --server.port=5555
+# mvn clean package &
