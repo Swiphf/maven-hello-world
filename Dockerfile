@@ -9,4 +9,4 @@ COPY . /
 WORKDIR /my-app
 EXPOSE 8080
 RUN mvn -f /my-app/pom.xml clean compile exec:java
-CMD java -jar target/my-app-1.0-SNAPSHOT.jar
+ENTRYPOINT java -jar target/my-app-1.0-SNAPSHOT.jar
