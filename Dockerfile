@@ -9,4 +9,4 @@ COPY . /
 WORKDIR /my-app
 EXPOSE 8080
 RUN mvn clean package
-CMD java -jar target/myapp-1.0.jar --server.port=5555
+ENTRYPOINT java -jar target/myapp-1.0.jar --server.port=5555
