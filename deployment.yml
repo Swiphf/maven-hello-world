@@ -14,11 +14,8 @@ spec:
     spec:
       containers:
         - name: mavenexercise
-          command: "java"
-          args:
-          - "-jar"
-          - "target/my-app-1.0-SNAPSHOT.jar"
-          - "--server.port=5555"
+          command: ["java"]
+          args: ["-jar", "target/my-app-1.0-SNAPSHOT.jar", "--server.port=5555"]
           image: idoalon/maven-exercise
           ports:
           - containerPort: 5555
