@@ -9,4 +9,3 @@ COPY . /
 WORKDIR /my-app
 #EXPOSE 5555
 RUN mvn clean package
-run sleep 3600
