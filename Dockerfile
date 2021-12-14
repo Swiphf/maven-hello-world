@@ -10,4 +10,3 @@ WORKDIR /my-app
 EXPOSE 8080
 RUN mvn -f /my-app/pom.xml clean compile exec:java
 ENTRYPOINT java -jar target/my-app-1.0-SNAPSHOT.jar
-CMD sleep 60
