@@ -14,9 +14,10 @@ spec:
     spec:
       containers:
         - name: mavenexercise
+          command: java -jar target/myapp-1.0.jar --server.port=5555
           image: idoalon/maven-exercise
           ports:
-          - containerPort: 8080
+          - containerPort: 5555
 
 
 ---
@@ -31,6 +32,6 @@ spec:
   type: LoadBalancer
   ports:
   - protocol: TCP
-    port: 8080
+    port: 5555
     targetPort: 5555
     nodePort: 31110
