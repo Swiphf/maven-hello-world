@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: mavenexercise
-          image: idoalon/mavenexercise:102
+          image: idoalon/mavenexercise:latest
           command: ["java"]
           args: ["-jar", "target/myapp-1.0.jar", "--server.port=5555"]
           ports:
