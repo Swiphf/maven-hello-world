@@ -27,11 +27,6 @@ pipeline {
                 } 
             }
         } 
-         stage('Cleanup') { 
-            steps { 
-                sh "docker rmi $registry:$BUILD_NUMBER" 
-            }
-        }
         stage('Push to Kubernetes Cluster') { 
             steps { 
                 script {
