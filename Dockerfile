@@ -8,4 +8,4 @@ ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 COPY . /
 WORKDIR /my-app
 EXPOSE 5555
-CMD mvn clean package && nohup java -jar ./target/myapp-1.0.jar --server.port=5555 &
+RUN mvn clean package
