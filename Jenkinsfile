@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        registry = "idoalon/maven_exercise" 
+        registry = "idoalon/maven-exercise" 
         registryCredential = 'dockerhub_id' 
         dockerImage = ''
     }   
