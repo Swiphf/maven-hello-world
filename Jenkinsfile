@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Get Source Code') {
             steps {
-                git 'https://github.com/Swiphf/maven-hello-world.git'
+                checkout scm
             }
         }
         stage('Build Docker Image') { 
