@@ -17,7 +17,6 @@ spec:
           image: idoalon/maven-exercise
           ports:
           - containerPort: 5555
-          - containerPort: 5555
                     
 
 ---
