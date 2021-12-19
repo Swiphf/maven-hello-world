@@ -7,5 +7,5 @@ ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 COPY . /
 WORKDIR /my-app
-#EXPOSE 5555
+EXPOSE 5555
 RUN mvn clean package
