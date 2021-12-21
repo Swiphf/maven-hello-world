@@ -30,6 +30,7 @@ pipeline {
         stage('Push to Kubernetes Cluster') { 
             steps { 
                 script {
+                    // sh 'helm upgrade --install ingress-nginx ingress-nginx --repo https://kubernetes.github.io/ingress-nginx --namespace ingress-nginx --create-namespace'
                     kubernetesDeploy(configs: "manifests/deployment.yml", kubeconfigId: "kubernetes")
                     sh 'kubectl apply -f manifests/ingress.yml --kubeconfig /home/agent/.kube/config'
                 }
