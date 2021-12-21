@@ -30,7 +30,8 @@ pipeline {
         stage('Push to Kubernetes Cluster') { 
             steps { 
                 script {
-                    kubernetesDeploy(configs: "./manifests/deployment.yml,./manifests/ingress.yml", kubeconfigId: "kubernetes")
+                    kubernetesDeploy(configs: "manifests/deployment.yml", kubeconfigId: "kubernetes")
+                    sh 'kubectl apply -f manifests/ingress.yml'
                 }
             }
         } 
