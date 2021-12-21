@@ -31,7 +31,7 @@ pipeline {
             steps { 
                 script {
                     kubernetesDeploy(configs: "manifests/deployment.yml", kubeconfigId: "kubernetes")
-                    sh 'kubectl apply -f manifests/ingress.yml'
+                    sh 'kubectl apply -f manifests/ingress.yml --kubeconfig /home/agent/.kube/config'
                 }
             }
         } 
