@@ -1,0 +1,37 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mavenexercise 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mavenexercise
+  template:
+    metadata:
+      labels:
+        app: mavenexercise
+    spec:
+      containers:
+        - name: mavenexercise
+          image: idoalon/mavenexercise:latest
+          command: ["java"]
+          args: ["-jar", "target/myapp-1.0.jar", "--server.port=5555"]
+          ports:
+          - containerPort: 5555
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mavenexercise-service
+spec:
+  selector:
+    app: mavenexercise 
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 5555
+    targetPort: 5555
+    nodePort: 31111
